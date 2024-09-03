@@ -1,0 +1,37 @@
+{% extends "main/components/base.html" %} 
+
+{% block title %}
+    create Category
+
+{% endblock %}
+
+
+{% block content %}
+<div class=" container  m-auto">
+
+    <h3> Create new Category</h3>
+    <!--  {{form}}   -->
+    <form method="POST">
+    {% csrf_token %}  
+    
+    {{ form }}
+
+    <div class="d-flex justify-content-around mt-3 align-items-center">
+        <input type="submit" class="btn btn-primary" value="Create Task">
+        <a href="{% url 'home' %}" class="btn btn-dark"> Back</a>
+    </div>
+    </form>
+    
+</div>
+
+{% endblock  %}
+
+<!--  
+    form methods {
+        post information -- title description  create new record 
+        get infromation -- reading  -- task if there is a titile with reading 
+        
+
+
+    }
+  -->
